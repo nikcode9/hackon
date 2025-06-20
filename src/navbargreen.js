@@ -30,7 +30,7 @@ const AmazonNavigationBarg = () => {
           <li><a href="#">More</a></li>
 
           {/* <Link style={{textDecoration: 'none'}} to = "/green">
-            <button className="button">Greenovation Zone</button>
+            <button className="button">GreenCart Zone</button>
           </Link> */}
           </ul>
       </div>

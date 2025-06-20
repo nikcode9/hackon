@@ -49,7 +49,7 @@ function Productbutton({ title, image, id, price, rating, badge_id }) {
       </button>
       <Link to="/product">
         <button onClick={handleLinkClick} className="greenovation">
-          Available on Greenovation
+          Available on GreenCart
         </button>
       </Link>{" "}
     </div>

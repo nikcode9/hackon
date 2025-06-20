@@ -7,9 +7,9 @@ function Educationsection() {
 
   const faqItems = [
     {
-      question: "Why did we create Greenovation Zone?",
+      question: "Why did we create GreenCart Zone?",
       answer:
-        "The Amazon Greenovation Zone was created to make it easier for customers to find and buy eco-friendly products. This promotes conscious shopping, reduces environmental impact, enhances the customer experience",
+        "The Amazon GreenCart Zone was created to make it easier for customers to find and buy eco-friendly products. This promotes conscious shopping, reduces environmental impact, enhances the customer experience",
     },
     {
       question: "What criteria are used to certify products as eco-friendly?",
@@ -20,7 +20,7 @@ function Educationsection() {
       question:
         "Can I provide feedback or report any concerns about a product's eco-friendly claims?",
       answer:
-        "Yes, you can provide feedback and report any concerns about a product's eco-friendly claims. We have a customer feedback system in place to ensure that your opinions and concerns are heard, allowing us to continuously improve the accuracy and reliability of eco-friendly claims within the 'Greenovation Zone.'",
+        "Yes, you can provide feedback and report any concerns about a product's eco-friendly claims. We have a customer feedback system in place to ensure that your opinions and concerns are heard, allowing us to continuously improve the accuracy and reliability of eco-friendly claims within the 'GreenCart Zone.'",
     },
     {
       question:

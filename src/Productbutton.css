@@ -40,7 +40,7 @@
     background-color: #f9c989;
   }
 
-  .greenovation {
+  .greencart {
     background-color: #62be3a;
     color: white;
     padding: 10px 30px;
@@ -49,11 +49,10 @@
     border-width: 0px;
     border-radius:5px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    /* font-weight: 500; */
     font-weight: bold;
   }
 
-  .greenovation:hover {
+  .greencart:hover {
     background-color: #7ed957;
   }
   
