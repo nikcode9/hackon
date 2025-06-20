@@ -41,6 +41,9 @@ function Product({ title, image, id, price, rating, badge_id }) {
       </div>
       <img src={image} alt="" />
       <button onClick={addToBasket}>Add to Cart</button>
+      <button className="show-predictor">
+          Show Eco-Friendliness Predictor
+        </button>
     </div>
   );
 }

@@ -136,6 +136,9 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
         </div>
       </div>
       <button onClick={addToBasket}>Add to Cart</button>
+      <button className="show-predictor">
+          Show Eco-Friendliness Predictor
+        </button>
     </div>
   );
 }

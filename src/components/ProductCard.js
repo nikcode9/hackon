@@ -13,6 +13,7 @@ function ProductCard({ product }) {
         </div>
         <p className="price">${product.price.toFixed(2)}</p>
         <button>Add to Cart</button>
+        <button>Show Eco-Friendliness Predictor</button>
       </div>
     </div>
   );

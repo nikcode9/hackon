@@ -148,6 +148,9 @@ function ProductDetails1() {
         >
           Add to Cart
         </button>
+        <button className="show-predictor">
+          Show Eco-Friendliness Predictor
+        </button>
       </div>
     </div>
   );

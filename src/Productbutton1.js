@@ -47,6 +47,9 @@ function Productbutton({ title, image, id, price, rating, badge_id }) {
       <button className="normal" onClick={addToBasket}>
         Add to Cart
       </button>
+      <button className="show-predictor">
+          Show Eco-Friendliness Predictor
+        </button>
       <Link to="/product1" onClick={handleLinkClick}>
         <button className="greenovation">Available on GreenCart</button>
       </Link>{" "}
