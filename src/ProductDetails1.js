@@ -4,9 +4,11 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { FaAmazonPay } from "react-icons/fa";
 import { GiCheckedShield, GiLaurelsTrophy } from "react-icons/gi";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function ProductDetails1() {
   const [selectedImage, setSelectedImage] = useState("../images/Bag1.png");
+  const [showPredictor, setShowPredictor] = useState(false);
 
   const [{ basket }, dispatch] = useStateValue();
 
@@ -148,9 +150,12 @@ function ProductDetails1() {
         >
           Add to Cart
         </button>
-        <button className="show-predictor">
+        <button className="show-predictor" onClick={() => setShowPredictor(true)}>
           Show Eco-Friendliness Predictor
         </button>
+        {showPredictor && (
+          <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+        )}
       </div>
     </div>
   );

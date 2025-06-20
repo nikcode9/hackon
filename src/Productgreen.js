@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Productgreen.css";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -44,6 +45,7 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
   const [isBadgePopoverVisible, setBadgePopoverVisible] = useState(false);
   const [showInfoPopover, setInfoShowPopover] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
+  const [showPredictor, setShowPredictor] = useState(false);
 
   const showBadgePopover = () => {
     setDontShowAgain(true);
@@ -136,9 +138,12 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
         {/* </div> */}
       </div>
       <button onClick={addToBasket}>Add to Cart</button>
-      <button className="show-predictor">
-          Show Eco-Friendliness Predictor
-        </button>
+      <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+        Show Eco-Friendliness Predictor
+      </button>
+      {showPredictor && (
+        <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+      )}
     </div>
   );
 }
