@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
-//import Popover from "./Popover";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function Product({ title, image, id, price, rating, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
+  const [showPredictor, setShowPredictor] = useState(false);
 
   console.log("this is >>>>>", basket);
 
@@ -41,9 +42,12 @@ function Product({ title, image, id, price, rating, badge_id }) {
       </div>
       <img src={image} alt="" />
       <button onClick={addToBasket}>Add to Cart</button>
-      <button className="show-predictor">
-          Show Eco-Friendliness Predictor
-        </button>
+      <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+        Show Eco-Friendliness Predictor
+      </button>
+      {showPredictor && (
+        <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+      )}
     </div>
   );
 }

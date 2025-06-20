@@ -1,4 +1,4 @@
-# Eco-Friendliness Prediction API
+# EarthScore Prediction API
 
 ## Endpoint
 
@@ -22,11 +22,11 @@
 
 ```json
 {
-  "eco_friendly_score": 0.82
+  "earth_score": 0.82
 }
 ```
 
-- `eco_friendly_score`: Probability (0-1) that the product is eco-friendly
+- `earth_score`: Probability (0-1) that the product is eco-friendly (EarthScore)
 
 ## Example (using curl)
 
