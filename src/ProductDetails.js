@@ -79,7 +79,7 @@ function ProductDetails() {
             ></img>
             <p className="eco_text">60% Less Carbon Emission</p>
           </div>
-          <div className="badge_details">
+          {/* <div className="badge_details">
             <div className="popover_trigger">
               <img
                 id="badgeToTrack"
@@ -89,7 +89,7 @@ function ProductDetails() {
               ></img>
             </div>
             <p className="eco_text">Eco-Friendly Badge</p>
-          </div>
+          </div> */}
         </div>
         <br></br>
         <p>
