@@ -151,7 +151,7 @@ function ProductDetails() {
           onClick={() => window.location.href = '/green'}
           style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
         >
-          Available in Greenzone
+          Available in GreenCart zone
         </button>
       </div>
     </div>
