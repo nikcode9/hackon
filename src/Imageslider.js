@@ -3,11 +3,11 @@ import './ImageSlider.css';
 
 function ImageSlider() {
   const imgs = [
-    { id: 0, value: '../images/prime_ad_slider.jpg' },
-    { id: 1, value: '../images/carousel_4.jpg' },
-    { id: 2, value: '../images/carousel_5.jpg' },
-    { id: 3, value: '../images/carousel_2.jpg' },
-    { id: 4, value: '../images/carousel_1.jpg' },
+    { id: 0, value: '../images/img1.jpeg' },
+    { id: 1, value: '../images/img2.jpeg' },
+    { id: 2, value: '../images/img3.jpeg' },
+    { id: 3, value: '../images/img4.jpeg' },
+    // { id: 4, value: '../images/img1.jpeg' },
   ];
   const [val, setVal] = useState(0);
 
