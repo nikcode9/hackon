@@ -4,9 +4,11 @@ import { FaTruck } from "react-icons/fa";
 import { FaAmazonPay } from "react-icons/fa";
 import { GiCheckedShield, GiLaurelsTrophy } from "react-icons/gi";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function ProductDetails() {
   const [selectedImage, setSelectedImage] = useState("../images/Straw2.png");
+  const [showPredictor, setShowPredictor] = useState(false);
   const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = (id, title, image, price, rating, badge_id) => {
@@ -79,7 +81,7 @@ function ProductDetails() {
             ></img>
             <p className="eco_text">60% Less Carbon Emission</p>
           </div>
-          <div className="badge_details">
+          {/* <div className="badge_details">
             <div className="popover_trigger">
               <img
                 id="badgeToTrack"
@@ -89,7 +91,7 @@ function ProductDetails() {
               ></img>
             </div>
             <p className="eco_text">Eco-Friendly Badge</p>
-          </div>
+          </div> */}
         </div>
         <br></br>
         <p>
@@ -147,12 +149,7 @@ function ProductDetails() {
         >
           Add to Cart
         </button>
-        <button
-          onClick={() => window.location.href = '/green'}
-          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
-        >
-          Available in GreenCart zone
-        </button>
+ 
       </div>
     </div>
   );

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Productbutton.css";
 import { useStateValue } from "./StateProvider";
 //import Popover from "./Popover";
 import { Link } from "react-router-dom";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function Productbutton({ title, image, id, price, rating, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
+  const [showPredictor, setShowPredictor] = useState(false);
 
   const handleLinkClick = () => {
     // Scroll to the top of the page when the link is clicked
@@ -47,6 +49,12 @@ function Productbutton({ title, image, id, price, rating, badge_id }) {
       <button className="normal" onClick={addToBasket}>
         Add to Cart
       </button>
+      <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+        Show Eco-Friendliness Predictor
+      </button>
+      {showPredictor && (
+        <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+      )}
       <Link to="/product1" onClick={handleLinkClick}>
         <button className="greenovation">Available on GreenCart</button>
       </Link>{" "}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Productgreen.css";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -24,26 +25,29 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
   let badge_photo = "";
   let badge_popover = "";
 
-  if (badge_id === 1) {
-    badge_photo = "../images/badge1.png";
-    badge_popover = "../images/badge1_popover.png";
-  } else if (badge_id === 2) {
-    badge_photo = "../images/badge2.png";
-    badge_popover = "../images/badge2_popover.png";
-  } else if (badge_id === 3) {
-    badge_photo = "../images/badge3.png";
-    badge_popover = "../images/badge3_popover.png";
-  } else if (badge_id === 4) {
-    badge_photo = "../images/badge4.png";
-    badge_popover = "../images/badge4_popover.png";
-  } else if (badge_id === 5) {
-    badge_photo = "../images/badge5.png";
-    badge_popover = "../images/badge5_popover.png";
-  }
+  // if (badge_id === 1) {
+  //   badge_photo = "../images/badge1.png";
+  //   badge_popover = "../images/badge1_popover.png";
+  // } else if (badge_id === 2) {
+  //   badge_photo = "../images/badge2.png";
+  //   badge_popover = "../images/badge2_popover.png";
+  // } else if (badge_id === 3) {
+  //   badge_photo = "../images/badge3.png";
+  //   badge_popover = "../images/badge3_popover.png";
+  // } else if (badge_id === 4) {
+  //   badge_photo = "../images/badge4.png";
+  //   badge_popover = "../images/badge4_popover.png";
+  // } else if (badge_id === 5) {
+  //   badge_photo = "../images/badge5.png";
+  //   badge_popover = "../images/badge5_popover.png";
+  // }
+
+  // Nikhil dhang se pull kr
 
   const [isBadgePopoverVisible, setBadgePopoverVisible] = useState(false);
   const [showInfoPopover, setInfoShowPopover] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
+  const [showPredictor, setShowPredictor] = useState(false);
 
   const showBadgePopover = () => {
     setDontShowAgain(true);
@@ -102,17 +106,17 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
           <img src="../images/co2badge.png" alt="" className="eco_image"></img>
           <p className="eco_text">{carbon_red}% Less Carbon Emission</p>
         </div>
-        <div className="badge_details">
-          <div className="popover_trigger">
+        {/* <div className="badge_details"> */}
+          {/* <div className="popover_trigger"> */}
             <img
               id="badgeToTrack"
-              src={badge_photo}
+              src={""}
               alt=""
-              className="eco_image"
+              className=""
               onMouseEnter={showBadgePopover}
               onMouseLeave={hideBadgePopover}
             ></img>
-            {isBadgePopoverVisible && (
+            {/* {isBadgePopoverVisible && (
               <div className="popover_content">
                 <div className="content">
                   <img
@@ -121,8 +125,8 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
                   ></img>
                 </div>
               </div>
-            )}
-            {showInfoPopover && id === "875615" && !dontShowAgain && (
+            )} */}
+            {/* {showInfoPopover && id === "875615" && !dontShowAgain && (
               <div className="badge_info_popover_content_nav">
                 <div className="badge_info_triangle"></div>
                 <p>Try hovering over the badge to see further details.</p>
@@ -130,12 +134,18 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
                   Got It
                 </button>
               </div>
-            )}
-          </div>
-          <p className="eco_text">Eco-Friendly Badge</p>
-        </div>
+            )} */}
+          {/* </div> */}
+          {/* <p className="eco_text">Eco-Friendly Badge</p> */}
+        {/* </div> */}
       </div>
       <button onClick={addToBasket}>Add to Cart</button>
+      <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+        Show Eco-Friendliness Predictor
+      </button>
+      {showPredictor && (
+        <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+      )}
     </div>
   );
 }

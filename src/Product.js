@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
-import { Link } from "react-router-dom";
+ 
 
 function Product({ title, image, id, price, rating, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
+  const [showPredictor, setShowPredictor] = useState(false);
 
   console.log("this is >>>>>", basket);
 
@@ -40,20 +41,7 @@ function Product({ title, image, id, price, rating, badge_id }) {
         </div>
       </div>
       <img src={image} alt="" />
-      <button
-        onClick={() => window.location.href = '/green'}
-        style={{
-          backgroundColor: "#388e3c",
-          color: "white",
-          border: "none",
-          padding: "8px 16px",
-          borderRadius: "4px",
-          cursor: "pointer",
-          marginTop: "10px",
-        }}
-      >
-        Available in GreenCart zone
-      </button>
+ 
     </div>
   );
 }
