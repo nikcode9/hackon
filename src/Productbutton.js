@@ -13,7 +13,10 @@ function Productbutton({ title, image, id, price, rating, badge_id }) {
     // Scroll to the top of the page when the link is clicked
     window.scrollTo(0, 0, { behavior: "instant" });
   };
-
+const addToCart = (item) => {
+    // Implement your cart logic here
+    alert(`${item.name || item.title} added to cart!`);
+  };
   const addToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",
@@ -49,17 +52,48 @@ function Productbutton({ title, image, id, price, rating, badge_id }) {
       <button className="normal" onClick={addToBasket}>
         Add to Cart
       </button>
-      <button className="show-predictor" onClick={() => setShowPredictor(true)}>
-        Show Eco-Friendliness Predictor
+
+      {/* <button
+        onClick={() => addToCart({ title, image, id, price, rating, badge_id })}
+        style={{
+          backgroundColor: "#1976d2",
+          color: "white",
+          border: "none",
+          padding: "8px 16px",
+          borderRadius: "4px",
+          cursor: "pointer",
+          marginTop: "10px",
+          marginRight: "8px",
+        }}
+      >
+        Add to Cart
+      </button> */}
+
+      <button
+        onClick={() => (window.location.href = "/green")}
+        style={{
+          backgroundColor: "#388e3c",
+          color: "white",
+          border: "none",
+          padding: "8px 16px",
+          borderRadius: "4px",
+          cursor: "pointer",
+          marginTop: "10px",
+        }}
+      >
+        View in GreenCart zone
       </button>
-      {showPredictor && (
+      {/* <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+        Show Eco-Friendliness Predictor
+      </button> */}
+      {/* {showPredictor && (
         <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
-      )}
-      <Link to="/product">
+      )} */}
+      {/* <Link to="/product">
         <button onClick={handleLinkClick} className="greenovation">
           Available on GreenCart
         </button>
-      </Link>{" "}
+      </Link>{" "} */}
     </div>
   );
 }

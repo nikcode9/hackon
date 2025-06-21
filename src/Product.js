@@ -13,6 +13,20 @@ function Product({ title, image, id, price, rating, badge_id }) {
     alert(`${item.name || item.title} added to cart!`);
   };
 
+  const addToBasket = () => {
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id,
+        title,
+        image,
+        price,
+        rating,
+        badge_id,
+      },
+    });
+  };
+
   return (
     <div className="product">
       <div className="product__bestseller">BESTSELLER</div>
@@ -32,7 +46,7 @@ function Product({ title, image, id, price, rating, badge_id }) {
       </div>
       <img src={image} alt={title} />
 
-      <button
+      {/* <button
         onClick={() => addToCart({ title, image, id, price, rating, badge_id })}
         style={{
           backgroundColor: "#1976d2",
@@ -45,6 +59,10 @@ function Product({ title, image, id, price, rating, badge_id }) {
           marginRight: "8px",
         }}
       >
+        Add to Cart
+      </button> */}
+
+      <button className="normal" onClick={addToBasket}>
         Add to Cart
       </button>
 

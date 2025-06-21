@@ -114,12 +114,12 @@ function Home() {
         </div>
 
         {/* For disposable and Kenwood products, update the button to match the rest: */}
-        <button
+        {/* <button
           onClick={() => window.location.href = '/green'}
           style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
         >
           View in GreenCart zone
-        </button>
+        </button> */}
       </div>
     </div>
   );
