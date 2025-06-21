@@ -36,6 +36,11 @@ function ProductDetails1() {
     setSelectedImage(image);
   };
 
+  const addToCart = (item) => {
+    // Implement your cart logic here
+    alert(`${item.name} added to cart!`);
+  };
+
   return (
     <div className="whole">
       <div className="img">
@@ -135,11 +140,18 @@ function ProductDetails1() {
         <br />
         <br />
 
+        {/* If there is no product variable, use a hardcoded object for demonstration */}
+        <button
+          onClick={() => addToCart({ name: 'Woven Bag' })}
+          style={{ backgroundColor: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px', marginRight: '8px', fontWeight: 'bold' }}
+        >
+          Add to Cart
+        </button>
         <button
           onClick={() => window.location.href = '/green'}
           style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
         >
-          Available in GreenCart zone
+          View in GreenCart zone
         </button>
         <button className="show-predictor" onClick={() => setShowPredictor(true)}>
           Show Eco-Friendliness Predictor
