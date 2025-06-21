@@ -42,6 +42,8 @@ function Product({ title, image, id, price, rating, carbon_red, badge_id }) {
   //   badge_popover = "../images/badge5_popover.png";
   // }
 
+  // Nikhil dhang se pull kr
+
   const [isBadgePopoverVisible, setBadgePopoverVisible] = useState(false);
   const [showInfoPopover, setInfoShowPopover] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
