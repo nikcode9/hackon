@@ -56,8 +56,8 @@ const AmazonNavigationBar = () => {
           <li><a href="#">Home & Kitchen</a></li>
           <li><a href="#">Amazon miniTV</a></li>
           <li><a href="#">Sell</a></li>
-          <li><a href="#">Gift cards</a></li>
-          <li><a href="#">Health, Household & Personal Care</a></li>
+          {/* <li><a href="#">Gift cards</a></li> */}
+          {/* <li><a href="#">Health, Household & Personal Care</a></li> */}
           <Link style={{ textDecoration: 'none' }} to="/seller">
             <li><a href="#" style={{ color: '#146eb4' }}>Seller</a></li>
           </Link>
