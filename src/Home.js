@@ -75,7 +75,7 @@ function Home() {
         <button
           onClick={() => window.location.href = '/green'}
         >
-          Available in Greencart Zone
+          Available in Greenzone
         </button>
       </div>
     </div>

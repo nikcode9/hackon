@@ -53,7 +53,7 @@ function Product({ title, image, id, price, rating, badge_id }) {
           marginTop: "10px",
         }}
       >
-        Available in Greencart Zone
+        Available in Greenzone
       </button>
     </div>
   );
