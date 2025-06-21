@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './navbar.css'; // Import your CSS file for styling
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const AmazonNavigationBar = () => {
   const [showPopover, setShowPopover] = useState(true);
@@ -56,11 +56,20 @@ const AmazonNavigationBar = () => {
           <li><a href="#">Home & Kitchen</a></li>
           <li><a href="#">Amazon miniTV</a></li>
           <li><a href="#">Sell</a></li>
-          <li><a href="#">Gift cards</a></li>
-          <li><a href="#">Health, Household & Personal Care</a></li>
-          
+          {/* <li><a href="#">Gift cards</a></li> */}
+          {/* <li><a href="#">Health, Household & Personal Care</a></li> */}
+          <Link style={{ textDecoration: 'none' }} to="/seller">
+            <li><a href="#" style={{ color: '#146eb4' }}>Seller</a></li>
+          </Link>
+          <Link style={{ textDecoration: 'none' }} to="/education">
+            <li><a href="#" style={{ color: '#146eb4' }}>Educational Section</a></li>
+          </Link>
+          <Link style={{ textDecoration: 'none' }} to="/sustainability">
+            <li><a href="#" style={{ color: '#146eb4' }}>Sustainability Reports</a></li>
+          </Link>
+
           <div className='popover_trigger_nav'>
-            <Link style={{textDecoration: 'none'}} to = "/green">
+            <Link style={{ textDecoration: 'none' }} to="/green">
               <button id='itemToTrack' className="button">GreenCart Zone</button>
             </Link>
             {showPopover && !dontShowAgain && (
@@ -71,7 +80,7 @@ const AmazonNavigationBar = () => {
               </div>
             )}
           </div>
-          </ul>
+        </ul>
       </div>
     </div>
   );

@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>GreenCart</h1>
+        {/* <h1>GreenCart</h1> */}
       </header>
       <Router>
         <div className="app">
@@ -51,6 +51,7 @@ function App() {
           </Routes>
         </div>
       </Router>
+ 
     </div>
   );
 }

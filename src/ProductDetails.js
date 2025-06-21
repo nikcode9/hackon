@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./ProductDetails.css";
-import { FaAmazonPay } from "react-icons/fa";
-import { GiCheckedShield, GiLaurelsTrophy } from "react-icons/gi";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function ProductDetails() {
   const [selectedImage, setSelectedImage] = useState("../images/Straw2.png");
+  const [showPredictor, setShowPredictor] = useState(false);
   const [{ basket }, dispatch] = useStateValue();
 
   const addToBasket = (id, title, image, price, rating, badge_id) => {
@@ -23,8 +23,7 @@ function ProductDetails() {
   };
 
   const addToCart = (item) => {
-    // Implement your cart logic here
-    alert(`${item.name} added to cart!`);
+    alert(`${item.title} added to cart!`);
   };
 
   const imageArray = [
@@ -67,45 +66,32 @@ function ProductDetails() {
           </div>
         </div>
         <div className="large-image">
-          {selectedImage && <img src={selectedImage} alt="Selected Image" />}
+          {selectedImage && <img src={selectedImage} alt="Selected Product" />}
         </div>
       </div>
 
       <div className="img-desc">
-        <h2>
-          Qudrat Natural Straw | Coconut Leaf | Biodegradable, Eco-Friendly &
-          Sustainable Drinking Straws (Pack of 100)
-        </h2>
+        <h2>{product.title}</h2>
         <p>⭐⭐⭐⭐ (23 reviews)</p>
-        <br></br>
+        <br />
         <p className="price">
           <span className="discounted-price">$15.35</span>
           <span className="original-price">$18.99</span>
         </p>
-        <br></br>
+        <br />
 
         <div className="eco_details">
           <div className="carbon_details">
             <img
               src="../images/co2badge.png"
-              alt=""
+              alt="CO2 Badge"
               className="eco_image"
-            ></img>
+            />
             <p className="eco_text">60% Less Carbon Emission</p>
           </div>
-          <div className="badge_details">
-            <div className="popover_trigger">
-              <img
-                id="badgeToTrack"
-                src="../images/badge5.png"
-                alt=""
-                className="eco_image"
-              ></img>
-            </div>
-            <p className="eco_text">Eco-Friendly Badge</p>
-          </div>
         </div>
-        <br></br>
+
+        <br />
         <p>
           Our innovative Quadrat straws offer an exceptional eco-friendly
           solution for all your beverage needs. Made from fallen coconut leaves,
@@ -118,25 +104,25 @@ function ProductDetails() {
           are a sustainable alternative to paper or plastic straws, working like
           plastic but feeling entirely natural.
         </p>
-        <br></br>
+        <br />
         <div className="icons">
           <div className="icon">
-            <img src="../images/8.png" className="i" />
+            <img src="../images/8.png" className="i" alt="Free Delivery" />
             <p>Free Delivery</p>
           </div>
 
           <div className="icon">
-            <img src="../images/9.png" className="i" />
+            <img src="../images/9.png" className="i" alt="Amazon Pay" />
             <p>Accept Amazon Pay</p>
           </div>
 
           <div className="icon">
-            <img src="../images/10.png" className="i" />
+            <img src="../images/10.png" className="i" alt="Warranty" />
             <p>2-year warranty</p>
           </div>
 
           <div className="icon">
-            <img src="../images/11.png" className="i" />
+            <img src="../images/11.png" className="i" alt="Top Brand" />
             <p>Top Brand</p>
           </div>
         </div>
@@ -146,36 +132,65 @@ function ProductDetails() {
             Available: <span style={{ color: "green" }}>In Stock</span>
           </p>
         </div>
+
         <button
           className="addtocart"
           onClick={() =>
             addToBasket(
-              "875617",
-              "Qudrat Natural Straw | Coconut Leaf | Biodegradable, Eco-Friendly & Sustainable Drinking Straws (Pack of 100)",
-              "../images/straw_eco.jpg",
-              8.99,
-              4,
-              5
+              product.id,
+              product.title,
+              product.image,
+              product.price,
+              product.rating,
+              product.badge_id
             )
           }
         >
           Add to Cart
         </button>
+
         <button
-          onClick={() => window.location.href = '/green'}
-          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
+          onClick={() => window.location.href = "/green"}
+          style={{
+            backgroundColor: "#388e3c",
+            color: "white",
+            border: "none",
+            padding: "8px 16px",
+            borderRadius: "4px",
+            cursor: "pointer",
+            marginTop: "10px",
+          }}
         >
           Available in GreenCart zone
         </button>
+
         <button
           onClick={() => addToCart(product)}
-          style={{ backgroundColor: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px', marginRight: '8px' }}
+          style={{
+            backgroundColor: "#1976d2",
+            color: "white",
+            border: "none",
+            padding: "8px 16px",
+            borderRadius: "4px",
+            cursor: "pointer",
+            marginTop: "10px",
+            marginRight: "8px",
+          }}
         >
-          Add to Cart
+          Quick Add
         </button>
+
         <button
-          onClick={() => window.location.href = '/green'}
-          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
+          onClick={() => window.location.href = "/green"}
+          style={{
+            backgroundColor: "#388e3c",
+            color: "white",
+            border: "none",
+            padding: "8px 16px",
+            borderRadius: "4px",
+            cursor: "pointer",
+            marginTop: "10px",
+          }}
         >
           View in GreenCart zone
         </button>

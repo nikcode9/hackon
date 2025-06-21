@@ -4,9 +4,11 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { FaAmazonPay } from "react-icons/fa";
 import { GiCheckedShield, GiLaurelsTrophy } from "react-icons/gi";
 import { useStateValue } from "./StateProvider";
+import EcoFriendlyPredictor from "./components/EcoFriendlyPredictor";
 
 function ProductDetails1() {
   const [selectedImage, setSelectedImage] = useState("../images/Bag1.png");
+  const [showPredictor, setShowPredictor] = useState(false);
 
   const [{ basket }, dispatch] = useStateValue();
 
@@ -84,7 +86,7 @@ function ProductDetails1() {
             ></img>
             <p className="eco_text">60% Less Carbon Emission</p>
           </div>
-          <div className="badge_details">
+          {/* <div className="badge_details">
             <div className="popover_trigger">
               <img
                 id="badgeToTrack"
@@ -94,7 +96,7 @@ function ProductDetails1() {
               ></img>
             </div>
             <p className="eco_text">Eco-Friendly Badge</p>
-          </div>
+          </div> */}
         </div>
         <br></br>
 
@@ -151,6 +153,12 @@ function ProductDetails1() {
         >
           View in GreenCart zone
         </button>
+        <button className="show-predictor" onClick={() => setShowPredictor(true)}>
+          Show Eco-Friendliness Predictor
+        </button>
+        {showPredictor && (
+          <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
+        )}
       </div>
     </div>
   );

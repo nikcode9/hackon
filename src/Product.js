@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
 
 function Product({ title, image, id, price, rating, badge_id }) {
-  const [{ basket }] = useStateValue();
+  const [{ basket }, dispatch] = useStateValue();
+  const [showPredictor, setShowPredictor] = useState(false); // Preserved from main
 
   console.log("this is >>>>>", basket);
 
   const addToCart = (item) => {
     // Implement your cart logic here
-    alert(`${item.name} added to cart!`);
+    alert(`${item.name || item.title} added to cart!`);
   };
 
   return (
@@ -24,12 +25,13 @@ function Product({ title, image, id, price, rating, badge_id }) {
         <div className="product__rating">
           {Array(rating)
             .fill()
-            .map((rate) => (
-              <p>⭐</p>
+            .map((_, i) => (
+              <p key={i}>⭐</p>
             ))}
         </div>
       </div>
-      <img src={image} alt="" />
+      <img src={image} alt={title} />
+
       <button
         onClick={() => addToCart({ title, image, id, price, rating, badge_id })}
         style={{
@@ -45,6 +47,7 @@ function Product({ title, image, id, price, rating, badge_id }) {
       >
         Add to Cart
       </button>
+
       <button
         onClick={() => (window.location.href = "/green")}
         style={{
