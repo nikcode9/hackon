@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Header from "./Header";
 import Home from "./Home";
@@ -21,11 +21,8 @@ import Feedback from "./feedback";
 import ProductDetails from "./ProductDetails";
 import ProductDetails1 from "./ProductDetails1";
 import FSubmitted from "./Feedbacksubmitted";
-import EcoFriendlyPredictor from './components/EcoFriendlyPredictor';
 
 function App() {
-  const [showPredictor, setShowPredictor] = useState(false);
-
   return (
     <div className="App">
       <header className="App-header">
@@ -54,10 +51,6 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <button onClick={() => setShowPredictor((v) => !v)}>
-        {showPredictor ? 'Hide Eco-Friendliness Predictor' : 'Show Eco-Friendliness Predictor'}
-      </button>
-      {showPredictor && <EcoFriendlyPredictor />}
     </div>
   );
 }

@@ -134,19 +134,10 @@ function ProductDetails1() {
         <br />
 
         <button
-          className="addtocart"
-          onClick={() =>
-            addToBasket(
-              "875615",
-              "Jutify Eco-Friendly Printed Unisex Canvas Shopping Bag, Women's Tote Bag | Spacious, Stylish, Sturdy Handbag",
-              "../images/bag_eco.jpg",
-              15.35,
-              4,
-              4
-            )
-          }
+          onClick={() => window.location.href = '/green'}
+          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
         >
-          Add to Cart
+          Available in Greencart Zone
         </button>
       </div>
     </div>

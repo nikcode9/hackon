@@ -147,6 +147,12 @@ function ProductDetails() {
         >
           Add to Cart
         </button>
+        <button
+          onClick={() => window.location.href = '/green'}
+          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
+        >
+          Available in Greencart Zone
+        </button>
       </div>
     </div>
   );

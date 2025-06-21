@@ -1,7 +1,7 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
-//import Popover from "./Popover";
+import { Link } from "react-router-dom";
 
 function Product({ title, image, id, price, rating, badge_id }) {
   const [{ basket }, dispatch] = useStateValue();
@@ -41,6 +41,20 @@ function Product({ title, image, id, price, rating, badge_id }) {
       </div>
       <img src={image} alt="" />
       <button onClick={addToBasket}>Add to Cart</button>
+      <button
+        onClick={() => window.location.href = '/green'}
+        style={{
+          backgroundColor: "#388e3c",
+          color: "white",
+          border: "none",
+          padding: "8px 16px",
+          borderRadius: "4px",
+          cursor: "pointer",
+          marginTop: "10px",
+        }}
+      >
+        Available in Greencart Zone
+      </button>
     </div>
   );
 }
