@@ -149,12 +149,7 @@ function ProductDetails() {
         >
           Add to Cart
         </button>
-        <button className="show-predictor" onClick={() => setShowPredictor(true)}>
-          Show Eco-Friendliness Predictor
-        </button>
-        {showPredictor && (
-          <EcoFriendlyPredictor onClose={() => setShowPredictor(false)} />
-        )}
+ 
       </div>
     </div>
   );

@@ -14,13 +14,13 @@ function Home() {
           src="https://images-eu.ssl-images-amazon.com/images/G/02/digital/video/merch2016/Hero/Covid19/Generic/GWBleedingHero_ENG_COVIDUPDATE__XSite_1500x600_PV_en-GB._CB428684220_.jpg"
           alt=""
         /> */}
-        <ImageSlider/>
+        <ImageSlider />
 
         <div className="home__row">
           <Productbutton
             id="12321341"
             title="Disposable Plastic Drinking Straws – a pack of 100 clear, BPA-free straws designed for convenience and reliability, 7.75-inch"
-            price={7.50}
+            price={7.5}
             rating={3}
             image="../images/straw.jpg"
             badge_id={0}
@@ -72,6 +72,12 @@ function Home() {
             badge_id={0}
           />
         </div>
+        <button
+          onClick={() => window.location.href = '/green'}
+          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
+        >
+          Available in GreenCart zone
+        </button>
       </div>
     </div>
   );
