@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ProductDetails.css";
-import { FaTruck } from "react-icons/fa";
 import { FaAmazonPay } from "react-icons/fa";
 import { GiCheckedShield, GiLaurelsTrophy } from "react-icons/gi";
 import { useStateValue } from "./StateProvider";
@@ -23,6 +22,11 @@ function ProductDetails() {
     });
   };
 
+  const addToCart = (item) => {
+    // Implement your cart logic here
+    alert(`${item.name} added to cart!`);
+  };
+
   const imageArray = [
     "../images/Straw1.png",
     "../images/Straw2.png",
@@ -32,6 +36,16 @@ function ProductDetails() {
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
+  };
+
+  const product = {
+    id: "875617",
+    title:
+      "Qudrat Natural Straw | Coconut Leaf | Biodegradable, Eco-Friendly & Sustainable Drinking Straws (Pack of 100)",
+    image: "../images/straw_eco.jpg",
+    price: 8.99,
+    rating: 4,
+    badge_id: 5,
   };
 
   return (
@@ -152,6 +166,18 @@ function ProductDetails() {
           style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
         >
           Available in GreenCart zone
+        </button>
+        <button
+          onClick={() => addToCart(product)}
+          style={{ backgroundColor: '#1976d2', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px', marginRight: '8px' }}
+        >
+          Add to Cart
+        </button>
+        <button
+          onClick={() => window.location.href = '/green'}
+          style={{ backgroundColor: '#388e3c', color: 'white', border: 'none', padding: '8px 16px', borderRadius: '4px', cursor: 'pointer', marginTop: '10px' }}
+        >
+          View in GreenCart zone
         </button>
       </div>
     </div>

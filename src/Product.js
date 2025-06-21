@@ -1,25 +1,15 @@
 import React from "react";
 import "./Product.css";
 import { useStateValue } from "./StateProvider";
-import { Link } from "react-router-dom";
 
 function Product({ title, image, id, price, rating, badge_id }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
 
   console.log("this is >>>>>", basket);
 
-  const addToBasket = () => {
-    dispatch({
-      type: "ADD_TO_BASKET",
-      item: {
-        id,
-        title,
-        image,
-        price,
-        rating,
-        badge_id,
-      },
-    });
+  const addToCart = (item) => {
+    // Implement your cart logic here
+    alert(`${item.name} added to cart!`);
   };
 
   return (
@@ -41,7 +31,22 @@ function Product({ title, image, id, price, rating, badge_id }) {
       </div>
       <img src={image} alt="" />
       <button
-        onClick={() => window.location.href = '/green'}
+        onClick={() => addToCart({ title, image, id, price, rating, badge_id })}
+        style={{
+          backgroundColor: "#1976d2",
+          color: "white",
+          border: "none",
+          padding: "8px 16px",
+          borderRadius: "4px",
+          cursor: "pointer",
+          marginTop: "10px",
+          marginRight: "8px",
+        }}
+      >
+        Add to Cart
+      </button>
+      <button
+        onClick={() => (window.location.href = "/green")}
         style={{
           backgroundColor: "#388e3c",
           color: "white",
@@ -52,7 +57,7 @@ function Product({ title, image, id, price, rating, badge_id }) {
           marginTop: "10px",
         }}
       >
-        Available in GreenCart zone
+        View in GreenCart zone
       </button>
     </div>
   );
